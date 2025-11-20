@@ -24,9 +24,6 @@ public class CoordinatesController {
         List<CoordinatesDTO> coords = service.findAll().stream()
                 .map(CoordinatesDTO::fromEntity)
                 .toList();
-        if (coords.isEmpty()) {
-            return ResponseEntity.notFound().build();
-        }
         return ResponseEntity.ok(coords);
     }
 

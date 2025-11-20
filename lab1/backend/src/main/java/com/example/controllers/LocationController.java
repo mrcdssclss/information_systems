@@ -25,9 +25,6 @@ public class LocationController {
         List<LocationDTO> locations = service.findAll().stream()
                 .map(LocationDTO::fromEntity)
                 .toList();
-        if (locations.isEmpty()) {
-            return ResponseEntity.notFound().build();
-        }
         return ResponseEntity.ok(locations);
     }
 

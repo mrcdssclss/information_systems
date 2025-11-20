@@ -19,7 +19,10 @@ public class PersonService {
     public Optional<Person> findById(Long id) { return personRepo.findById(Math.toIntExact(id)); }
 
     @Transactional
-    public Person save(Person p) { return personRepo.save(p); }
+    public Person save(Person p) {
+        System.out.println(p);
+        return personRepo.save(p);
+    }
 
     @Transactional
     public Optional<Person> update(Long id, Person updated) {

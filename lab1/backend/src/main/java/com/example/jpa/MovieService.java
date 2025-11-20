@@ -50,7 +50,7 @@ public class MovieService {
             if (person.getLocation() != null) {
                 Location loc = person.getLocation();
                 if (loc.getId() != null) {
-                    Location persisted = locationRepo.findById(loc.getId()).orElse(loc);
+                    Location persisted = locationRepo.findById(Math.toIntExact(loc.getId())).orElse(loc);
                     person.setLocation(persisted);
                 } else {
                     Location savedLoc = locationRepo.save(loc);
@@ -64,7 +64,7 @@ public class MovieService {
     private Coordinates resolveOrSaveCoordinates(Coordinates c) {
         if (c == null) return null;
         if (c.getId() != null) {
-            return coordinatesRepo.findById(c.getId()).orElse(c);
+            return coordinatesRepo.findById(Math.toIntExact(c.getId())).orElse(c);
         } else {
             return coordinatesRepo.save(c);
         }

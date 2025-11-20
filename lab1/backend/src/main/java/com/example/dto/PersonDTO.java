@@ -2,11 +2,13 @@ package com.example.dto;
 
 import com.example.entities.Color;
 import com.example.entities.Country;
+import com.example.entities.Location;
 import com.example.entities.Person;
 import lombok.Data;
 
 @Data
 public class PersonDTO {
+    private Long id;
     private String name;
     private Color eyeColor;
     private Color hairColor;
@@ -15,7 +17,9 @@ public class PersonDTO {
     private Country nationality;
 
     public static PersonDTO fromEntity(Person person) {
+        if (person == null) return null;
         PersonDTO personDTO = new PersonDTO();
+        personDTO.setId(person.getId());
         personDTO.setName(person.getName());
         personDTO.setEyeColor(person.getEyeColor());
         personDTO.setHairColor(person.getHairColor());
@@ -30,9 +34,13 @@ public class PersonDTO {
         person.setName(personDTO.name);
         person.setEyeColor(personDTO.eyeColor);
         person.setHairColor(personDTO.hairColor);
-        person.setLocation(LocationDTO.toEntity(personDTO.getLocation()));
         person.setWeight(personDTO.weight);
         person.setNationality(personDTO.nationality);
+        if (personDTO.getLocation() != null) {
+            Location loc = new Location();
+            loc.setId(personDTO.getLocation().getId());
+            person.setLocation(loc);
+        }
         return person;
     }
 }

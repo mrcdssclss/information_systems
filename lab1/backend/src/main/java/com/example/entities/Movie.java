@@ -17,7 +17,7 @@ public class Movie {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
+    private Long id; //Значение поля должно быть больше 0, Значение этого поля должно быть уникальным, Значение этого поля должно генерироваться автоматически
 
     @Column(nullable = false)
     @NotBlank
@@ -39,7 +39,7 @@ public class Movie {
     private Integer budget; //Значение поля должно быть больше 0
 
     @Min(1)
-    private Integer totalBoxOffice; //Поле может быть null, Значение поля должно быть больше 0
+    private int totalBoxOffice; //Поле может быть null, Значение поля должно быть больше 0
 
     @Enumerated(EnumType.STRING)
     private MpaaRating mpaaRating; //Поле может быть null

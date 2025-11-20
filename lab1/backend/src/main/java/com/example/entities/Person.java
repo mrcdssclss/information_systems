@@ -20,6 +20,7 @@ public class Person {
 
     @Enumerated(EnumType.STRING)
     private Color eyeColor; //Поле может быть null
+
     @Enumerated(EnumType.STRING)
     private Color hairColor; //Поле может быть null
 
@@ -30,7 +31,6 @@ public class Person {
     @Min(1)
     private long weight;
 
-    @NotNull
     @Enumerated(EnumType.STRING)
     private Country nationality; //Поле может быть null
 }

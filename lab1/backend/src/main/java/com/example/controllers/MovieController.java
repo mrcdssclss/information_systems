@@ -2,6 +2,7 @@ package com.example.controllers;
 
 import com.example.dto.MovieDTO;
 import com.example.entities.Movie;
+import com.example.entities.MovieGenre;
 import com.example.jpa.MovieService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +12,7 @@ import java.util.Optional;
 
 
 @RestController
-@RequestMapping("/main")
+@RequestMapping("/movies")
 @CrossOrigin(origins = "http://localhost:3000")
 public class MovieController {
     private final MovieService movieService;
@@ -24,11 +25,7 @@ public class MovieController {
         List<MovieDTO> movies = movieService.getAll().stream()
                 .map(MovieDTO::fromEntity)
                 .toList();
-        if (movies.isEmpty()) {
-            return ResponseEntity.notFound().build();
-        } else {
-            return ResponseEntity.ok(movies);
-        }
+        return ResponseEntity.ok(movies);
     }
 
 
@@ -66,5 +63,46 @@ public class MovieController {
         }
         movieService.delete(id);
         return ResponseEntity.noContent().build();
+    }
+
+    @DeleteMapping("/deleteByUsaBoxOffice/{value}")
+    public ResponseEntity<Long> deleteByUsaBoxOffice(@PathVariable Double value) {
+        long count = movieService.deleteByUsaBoxOffice(value);
+        return ResponseEntity.ok(count);
+    }
+
+    @GetMapping("/sumGoldenPalm")
+    public ResponseEntity<Long> sumGoldenPalm() {
+        return ResponseEntity.ok(movieService.sumGoldenPalmCount());
+    }
+
+    @GetMapping("/greaterGoldenPalm/{value}")
+    public ResponseEntity<List<MovieDTO>> getGreaterGoldenPalm(@PathVariable Long value) {
+        List<MovieDTO> result = movieService
+                .getMoviesWithGoldenPalmCountGreaterThan(value)
+                .stream()
+                .map(MovieDTO::fromEntity)
+                .toList();
+
+        return ResponseEntity.ok(result);
+    }
+
+    @PostMapping("/special/stripOscars/{genre}")
+    public ResponseEntity<Long> stripOscarsByGenre(@PathVariable String genre) {
+        try {
+            long res = movieService.stripOscarsByGenre(MovieGenre.valueOf(genre.toUpperCase()));
+            return ResponseEntity.ok(res);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
+
+    @PostMapping("/awardOscars")
+    public ResponseEntity<Long> awardOscars(
+            @RequestParam int length,
+            @RequestParam long extra
+    ) {
+        long res = movieService.awardOscarsByLength(length, extra);
+        return ResponseEntity.ok(res);
     }
 }
