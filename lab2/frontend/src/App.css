@@ -1,0 +1,129 @@
+/* === Общие стили для всего приложения === */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #FAF5FF; /* светло-сиреневый фон */
+  color: #4B367C; /* тёмно-сиреневый текст */
+}
+
+/* --- Вкладки --- */
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.tabs button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #D9C6F2; /* мягкий сиреневый */
+  color: #4B367C;
+  font-weight: 500;
+  transition: 0.2s all;
+}
+
+.tabs button:hover {
+  background-color: #B890E0;
+}
+
+.tabs button.active {
+  background-color: #A583D8;
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(155, 89, 182, 0.4);
+}
+
+/* --- Поля ввода и select --- */
+input, select {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #C4A7E7;
+  background-color: #FAF5FF;
+  color: #4B367C;
+  transition: 0.2s all;
+  font-family: 'Arial', sans-serif;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: #9B59B6;
+  box-shadow: 0 0 5px rgba(155, 89, 182, 0.3);
+}
+
+/* --- Таблицы --- */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  min-width: 800px;
+  background-color: #F5F0FA;
+  color: #4B367C;
+}
+
+th, td {
+  border: 1px solid #D3C0EB;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #D9C6F2;
+  cursor: pointer;
+  transition: 0.2s all;
+}
+
+th:hover {
+  background-color: #B890E0;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #EFE5F8;
+}
+
+tr:hover {
+  background-color: #E0D1F5;
+}
+
+/* --- Контейнеры для форм и операций --- */
+.tab-content {
+  background-color: #F5F0FA;
+  border: 1px solid #D3C0EB;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(180, 150, 220, 0.2);
+  overflow-x: auto;
+}
+
+button {
+  cursor: pointer;
+  font-family: 'Arial', sans-serif;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  background-color: #D9C6F2;
+  color: #4B367C;
+  font-weight: 500;
+  transition: 0.2s all;
+}
+
+button:hover {
+  background-color: #B890E0;
+  color: #fff;
+}
+
+/* --- Успешные и ошибочные сообщения --- */
+.success-message {
+  color: green;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.error-message {
+  color: red;
+  font-weight: 500;
+  margin-top: 10px;
+}
