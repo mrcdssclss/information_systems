@@ -1,0 +1,23 @@
+[
+  {
+    "movie": {
+      "name": "Interstellar",
+      "genre": "ADVENTURE",
+      "length": 169,
+      "oscarsCount": 5,
+      "totalBoxOffice": 700000000,
+      "mpaaRating": "PG_13",
+      "budget": 165000000,
+      "goldenPalmCount": 1,
+      "usaBoxOffice": 200000000,
+      "isImported": true
+    },
+    "coordinates": { "x": 10, "y": 20 },
+    "director": { "name": "Nolan", "eyeColor": "BROWN", "hairColor": "RED", "weight": 75, "nationality": "UNITED_KINGDOM" },
+    "directorLocation": { "x": 1, "y": 2, "z": 3, "name": "London" },
+    "operator": { "name": "Wally", "eyeColor": "RED", "hairColor": "BROWN", "weight": 70, "nationality": "UNITED_KINGDOM" },
+    "operatorLocation": { "x": 4, "y": 5, "z": 6, "name": "Paris" },
+    "screenwriter": { "name": "Jonah", "eyeColor": "ORANGE", "hairColor": "RED", "weight": 65, "nationality": "UNITED_KINGDOM" },
+    "screenwriterLocation": { "x": 7, "y": 8, "z": 9, "name": "Berlin" }
+  }
+]

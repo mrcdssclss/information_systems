@@ -31,17 +31,6 @@ public class MovieService {
         return movieRepo.findById(id);
     }
 
-    public Page<Movie> getFilteredAndPagedMovies(String filter, Pageable pageable) {
-        Specification<Movie> spec = (root, query, cb) -> {
-            if (filter == null || filter.isEmpty()) return cb.conjunction();
-            String lf = "%" + filter.toLowerCase() + "%";
-            List<Predicate> p = new ArrayList<>();
-            p.add(cb.like(cb.lower(root.get("name")), lf));
-            p.add(cb.like(cb.lower(root.join("director").get("name")), lf));
-            return cb.or(p.toArray(new Predicate[0]));
-        };
-        return movieRepo.findAll(spec, pageable);
-    }
     private Person resolveOrSavePerson(Person person) {
         if (person == null) return null;
         if (person.getId() != null) {
@@ -145,4 +134,19 @@ public class MovieService {
     public List<Movie> getAll(){
         return movieRepo.findAll();
     }
+
+    public List<Movie> history(){
+        List<Movie> movies = movieRepo.findAll();
+        List<Movie> history = new ArrayList<>(List.of());
+        for (Movie movie : movies) {
+            if (movie.isImported()){
+                history.add(movie);
+            }
+        }
+        return history.subList(-10, history().size());
+    }
+
+
 }
+
+

@@ -1,0 +1,44 @@
+[
+  {
+    "movie": {
+      "name": "Galactic Odyssey",
+      "genre": "FANTASY",
+      "length": 142,
+      "oscarsCount": 3,
+      "totalBoxOffice": 550000000,
+      "mpaaRating": "PG",
+      "budget": 120000000,
+      "goldenPalmCount": 1,
+      "usaBoxOffice": 180000000,
+      "isImported": true
+    },
+    "coordinates": { "x": 12, "y": 22 },
+    "director": { "name": "Ridley", "eyeColor": "BROWN", "hairColor": "RED", "weight": 78, "nationality": "UNITED_KINGDOM" },
+    "directorLocation": { "x": 1, "y": 2, "z": 3, "name": "London" },
+    "operator": { "name": "Emma", "eyeColor": "RED", "hairColor": "ORANGE", "weight": 65, "nationality": "UNITED_KINGDOM" },
+    "operatorLocation": { "x": 4, "y": 5, "z": 6, "name": "Paris" },
+    "screenwriter": { "name": "Lucas", "eyeColor": "ORANGE", "hairColor": "BROWN", "weight": 70, "nationality": "UNITED_KINGDOM" },
+    "screenwriterLocation": { "x": 7, "y": 8, "z": 9, "name": "Berlin" }
+  },
+  {
+    "movie": {
+      "name": "Time Paradox",
+      "genre": "ADVENTURE",
+      "length": 155,
+      "oscarsCount": 2,
+      "totalBoxOffice": 610000000,
+      "mpaaRating": "PG_13",
+      "budget": 140000000,
+      "goldenPalmCount": 1,
+      "usaBoxOffice": 210000000,
+      "isImported": true
+    },
+    "coordinates": { "x": 18, "y": 28 },
+    "director": { "name": "Cameron", "eyeColor": "RED", "hairColor": "ORANGE", "weight": 80, "nationality": "UNITED_KINGDOM" },
+    "directorLocation": { "x": 2, "y": 3, "z": 4, "name": "London" },
+    "operator": { "name": "Sophia", "eyeColor": "RED", "hairColor": "RED", "weight": 68, "nationality": "UNITED_KINGDOM" },
+    "operatorLocation": { "x": 5, "y": 6, "z": 7, "name": "Paris" },
+    "screenwriter": { "name": "Miller", "eyeColor": "BROWN", "hairColor": "BROWN", "weight": 72, "nationality": "UNITED_KINGDOM" },
+    "screenwriterLocation": { "x": 8, "y": 9, "z": 10, "name": "Berlin" }
+  }
+]

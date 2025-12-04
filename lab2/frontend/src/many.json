@@ -1,0 +1,44 @@
+[
+  {
+    "movie": {
+      "name": "NON Interstellar",
+      "genre": "ADVENTURE",
+      "length": 169,
+      "oscarsCount": 5,
+      "totalBoxOffice": 700000000,
+      "mpaaRating": "PG_13",
+      "budget": 165000000,
+      "goldenPalmCount": 1,
+      "usaBoxOffice": 200000000,
+      "isImported": true
+    },
+    "coordinates": { "x": 10, "y": 20 },
+    "director": { "name": "Nolan", "eyeColor": "BROWN", "hairColor": "RED", "weight": 75, "nationality": "UNITED_KINGDOM" },
+    "directorLocation": { "x": 1, "y": 2, "z": 3, "name": "London" },
+    "operator": { "name": "Wally", "eyeColor": "RED", "hairColor": "ORANGE", "weight": 70, "nationality": "UNITED_KINGDOM" },
+    "operatorLocation": { "x": 4, "y": 5, "z": 6, "name": "Paris" },
+    "screenwriter": { "name": "Jonah", "eyeColor": "ORANGE", "hairColor": "BROWN", "weight": 65, "nationality": "UNITED_KINGDOM" },
+    "screenwriterLocation": { "x": 7, "y": 8, "z": 9, "name": "Berlin" }
+  },
+  {
+    "movie": {
+      "name": "Inception",
+      "genre": "DRAMA",
+      "length": 148,
+      "oscarsCount": 4,
+      "totalBoxOffice": 830000000,
+      "mpaaRating": "PG_13",
+      "budget": 160000000,
+      "goldenPalmCount": 1,
+      "usaBoxOffice": 290000000,
+      "isImported": true
+    },
+    "coordinates": { "x": 15, "y": 25 },
+    "director": { "name": "Nolan", "eyeColor": "BROWN", "hairColor": "BROWN", "weight": 75, "nationality": "UNITED_KINGDOM" },
+    "directorLocation": { "x": 2, "y": 3, "z": 4, "name": "London" },
+    "operator": { "name": "Wally", "eyeColor": "RED", "hairColor": "RED", "weight": 70, "nationality": "UNITED_KINGDOM" },
+    "operatorLocation": { "x": 5, "y": 6, "z": 7, "name": "Paris" },
+    "screenwriter": { "name": "Jonah", "eyeColor": "ORANGE", "hairColor": "ORANGE", "weight": 65, "nationality": "UNITED_KINGDOM" },
+    "screenwriterLocation": { "x": 8, "y": 9, "z": 10, "name": "Berlin" }
+  }
+]

@@ -28,7 +28,6 @@ public class MovieController {
         return ResponseEntity.ok(movies);
     }
 
-
     @GetMapping("/{id}")
     public ResponseEntity<MovieDTO> getMovie(@PathVariable Integer id) {
         Optional<Movie> movieOpt = movieService.getMovie(id);
@@ -104,5 +103,15 @@ public class MovieController {
     ) {
         long res = movieService.awardOscarsByLength(length, extra);
         return ResponseEntity.ok(res);
+    }
+
+    @PostMapping("/import")
+    public ResponseEntity<List<MovieDTO>> getHistory(){
+        List<MovieDTO> result = movieService
+                .history()
+                .stream()
+                .map(MovieDTO::fromEntity)
+                .toList();
+        return ResponseEntity.ok(result);
     }
 }

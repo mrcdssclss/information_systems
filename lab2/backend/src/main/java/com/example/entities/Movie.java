@@ -68,6 +68,9 @@ public class Movie {
     @Column(nullable = false)
     private MovieGenre genre; //Поле не может быть null
 
+    @Column(nullable = false)
+    private boolean isImported;
+
     public Movie() {
     }
 }

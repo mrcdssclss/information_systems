@@ -115,7 +115,6 @@ button:hover {
   color: #fff;
 }
 
-/* --- Успешные и ошибочные сообщения --- */
 .success-message {
   color: green;
   font-weight: 500;
@@ -126,4 +125,57 @@ button:hover {
   color: red;
   font-weight: 500;
   margin-top: 10px;
+}
+
+/* --- История импорта --- */
+.history-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: #4B367C; /* мягкий сиреневый */
+  color: #4B367C; /* тёмно-сиреневый текст */
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.25s all;
+  box-shadow: 0 0 10px rgba(75, 54, 124, 0.4);
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.history-container.open {
+  width: 260px;
+  height: 200px;
+  background: #F5F0FA; /* светлый фон */
+  border: 1px solid #4B367C; /* тёмно-сиреневый бордюр */
+}
+
+.history-header {
+  padding: 10px;
+  background: #B890E0; /* насыщенный сиреневый */
+  text-align: center;
+  font-weight: bold;
+  color: #4B367C; /* тёмно-сиреневый текст */
+  border-bottom: 1px solid #4B367C;
+}
+
+.history-header.closed {
+  border-bottom: none;
+}
+
+.history-list {
+  padding: 10px;
+  overflow-y: auto;
+  height: calc(100% - 42px);
+  color: #4B367C; /* тёмно-сиреневый текст */
+}
+
+.history-list ul {
+  padding-left: 15px;
+}
+
+.history-list li {
+  margin-bottom: 5px;
+  font-size: 14px;
 }
