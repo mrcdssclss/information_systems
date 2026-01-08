@@ -181,6 +181,22 @@ export default function CreateEntities( {externalSetHistory} ) {
         if (!file) return;
 
         try {
+            const formData = new FormData();
+            formData.append('file', file);
+
+            const response = await fetch('/api/upload', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (!response.ok) {
+                setMessage("Ошибка загрузки файла на сервер");
+                return;
+            }
+
+            const result = await response.json();
+            const fileId = result.fileId;
+
             const text = await file.text();
             const list = JSON.parse(text);
 
@@ -203,7 +219,6 @@ export default function CreateEntities( {externalSetHistory} ) {
                     ]);
 
                     ok++;
-
                 } catch (err) {
                     updateProgress(taskId, 100, "fail", `Импорт фильма ${i + 1}`);
 
@@ -221,11 +236,9 @@ export default function CreateEntities( {externalSetHistory} ) {
                 }
             }
 
-
             setMessage(`Импорт завершён. Успех: ${ok}, Ошибки: ${fail}`);
 
         } catch (err) {
-
             setMessage("Ошибка чтения JSON: " + err.message);
 
             externalSetHistory(prev => [
@@ -239,6 +252,7 @@ export default function CreateEntities( {externalSetHistory} ) {
             ]);
         }
     };
+
 
 
     const renderPersonSelect = (

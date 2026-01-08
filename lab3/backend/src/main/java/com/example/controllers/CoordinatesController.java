@@ -3,7 +3,7 @@ package com.example.controllers;
 
 import com.example.dto.CoordinatesDTO;
 import com.example.entities.Coordinates;
-import com.example.jpa.CoordinatesService;
+import com.example.service.CoordinatesService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

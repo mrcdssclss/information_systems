@@ -3,7 +3,7 @@ package com.example.controllers;
 import com.example.dto.MovieDTO;
 import com.example.entities.Movie;
 import com.example.entities.MovieGenre;
-import com.example.jpa.MovieService;
+import com.example.service.MovieService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

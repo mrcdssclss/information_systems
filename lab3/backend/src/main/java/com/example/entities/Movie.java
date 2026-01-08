@@ -6,6 +6,7 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import jakarta.validation.constraints.NotBlank;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import java.time.ZonedDateTime;
 
@@ -13,6 +14,10 @@ import java.time.ZonedDateTime;
 @Entity
 @Table(name="movies")
 @Data
+@Cacheable
+@org.hibernate.annotations.Cache(
+        usage = CacheConcurrencyStrategy.READ_WRITE
+)
 public class Movie {
 
     @Id

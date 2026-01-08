@@ -2,7 +2,7 @@ package com.example.controllers;
 
 import com.example.dto.LocationDTO;
 import com.example.entities.Location;
-import com.example.jpa.LocationService;
+import com.example.service.LocationService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

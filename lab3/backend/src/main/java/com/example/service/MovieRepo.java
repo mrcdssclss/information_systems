@@ -1,4 +1,4 @@
-package com.example.jpa;
+package com.example.service;
 
 import com.example.entities.Movie;
 import org.springframework.data.jpa.repository.JpaRepository;

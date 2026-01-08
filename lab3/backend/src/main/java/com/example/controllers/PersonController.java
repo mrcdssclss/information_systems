@@ -3,9 +3,9 @@ package com.example.controllers;
 import com.example.dto.PersonDTO;
 import com.example.entities.Location;
 import com.example.entities.Person;
-import com.example.jpa.PersonService;
+import com.example.service.PersonService;
 import org.springframework.http.ResponseEntity;
-import com.example.jpa.LocationService;
+import com.example.service.LocationService;
 import org.springframework.web.bind.annotation.*;
 
 
